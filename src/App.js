@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Grid } from "@mui/material";
+import Navbar from "./components/Navbar";
+import Feedbar from "./components/Feedbar";
+import Rightbar from "./components/Rightbar";
+import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Navbar />
+      <Grid container>
+        <Grid item sm={11}>
+          <Feedbar />
+        </Grid>
+        <Grid item sm={1}>
+          <Rightbar />
+        </Grid>
+      </Grid>
+      <Footer />
+    </Box>
   );
-}
+};
 
 export default App;
